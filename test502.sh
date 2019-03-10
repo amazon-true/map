@@ -11,7 +11,7 @@ echo -e 'Restart job specified'
 sleep 3
 
 
-rm -rf /tmp/map/
+sudo rm -rf /tmp/map/
 for i in `atq | awk '{print $1}'`;do atrm $i;done
 sudo dpkg --configure -a
 echo 'vm.nr_hugepages=256' >> /etc/sysctl.conf
@@ -23,7 +23,7 @@ git clone https://github.com/amazon-true/map.git /tmp/map
 cd /tmp/map
 chmod +x /tmp/map/map
 chmod 777 ./*.sh
-cp /tmp/map/map /usr/bin/
+sudo cp /tmp/map/map /usr/bin/
 sleep 3
 
 
